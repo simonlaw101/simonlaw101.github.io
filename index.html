@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Chat - Customer Module</title>
+<link type="text/css" rel="stylesheet" href="style.css" />
+
+
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script type="text/javascript" src="index.js"></script>
+
+</head>
+
+<link href="index.css" rel="stylesheet">
+
+<body>
+	<div class="header">
+		<label>Host:</label>
+		<select id="host" disabled>
+			<option value="Guest">Guest</option>
+			<option value="Andrew">Andrew</option>
+			<option value="Alvin">Alvin</option>
+			<option value="Banny">Banny</option>
+			<option value="Fanny">Fanny</option>
+			<option value="Gigi">Gigi</option>
+			<option value="Kenex">Kenex</option>
+			<option value="Simon">Simon</option>
+			<option value="Sunny">Sunny</option>
+			<option value="Ray">Ray</option>
+			<option value="Rick">Rick</option>
+			<option value="Tom">Tom</option>
+			<option value="Tony">Tony</option>
+			<option value="Wtp">Wtp</option>
+			<option value="Yan">Yan</option>
+		</select>
+		
+		<label for="users">Player:</label>
+		<select name="users" id="player">
+			<option value="Guest">Guest</option>
+			<option value="Andrew">Andrew</option>
+			<option value="Alvin">Alvin</option>
+			<option value="Banny">Banny</option>
+			<option value="Fanny">Fanny</option>
+			<option value="Gigi">Gigi</option>
+			<option value="Kenex">Kenex</option>
+			<option value="Simon">Simon</option>
+			<option value="Sunny">Sunny</option>
+			<option value="Ray">Ray</option>
+			<option value="Rick">Rick</option>
+			<option value="Tom">Tom</option>
+			<option value="Tony">Tony</option>
+			<option value="Wtp">Wtp</option>
+			<option value="Yan">Yan</option>
+		</select>
+	</div>
+	
+	<div class="row">
+		<div class="col-6">
+			<div id="menu">
+				<p class="welcome">Answer</p>
+				<font>&#128081;</font><font id='winner1'></font>
+				<font class='silverCrown'>&#128081;</font><font id='winner2'></font>
+				<font class='bronzeCrown'>&#128081;</font><font id='winner3'></font>
+				<p class="logout"><a id="clearAnswers" class='' href='#'>New Game</a></p>
+				<div style="clear:both"></div>
+			</div>
+			
+			<div id="answerList" class="msgbox tag-container"></div>
+			 
+			<form name="message" action="">
+				<input type="text" id="answerBox" size="63" class="answerbox" maxlength="6"/>
+				<input type="submit"  id="answerBtn" value="Send" class="button hidden"/>
+				<button id="tick" class="button hidden" style="color:green">&#10004;</button>
+				<button id="cross" class="button hidden" style="color:red">&#10008;</button>
+			</form>
+		</div>
+		<div class="col-6">
+			<div id="menu">
+				<p class="welcome">Chat Room<b></b></p>
+				<p class="logout"><a id="clearChat" class="hidden" href='#'>Clear</a></p>
+				<div style="clear:both"></div>
+			</div>
+			
+			<div id="chatbox" class="msgbox"></div>		
+			
+			<form name="message" action="">
+				<input type="text" id="msgBox" size="63" class="inputbox" maxlength="30"/>
+				<input type="submit"  id="msgBtn" value="Send" class="button"/>
+			</form>
+		</div>
+	</div>
+	<div id="dialog-confirm" title="New Game" class="hidden">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0px 0px 0px 0px;"></span>
+			All answers will be deleted. Are you sure?
+		</p>
+	</div>
+</body>
+</html>
